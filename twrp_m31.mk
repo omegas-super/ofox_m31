@@ -14,6 +14,6 @@ $(call inherit-product, device/samsung/m31/device.mk)
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := twrp_m31
 PRODUCT_DEVICE := m31
-PRODUCT_MODEL := SM-M317F
+PRODUCT_MODEL := SM-M315F
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
