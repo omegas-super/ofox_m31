@@ -109,7 +109,10 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor prod
 # which is why data could never be decrypted. The vendor provides
 # android.hardware.keymaster@4.0-service.samsung and gatekeeper-service.teegris,
 # which is the pairing TWRP's FBE path targets, so this is worth attempting.
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
-BOARD_USES_METADATA_PARTITION := true
+# DISABLED (2026-11-27): crypto pulls keymaster/gatekeeper/fscrypt libraries into the
+# ramdisk and pushes it to 17.4 MB vs the 13.5 MB of the TWRP tar that boots.
+# Re-enable only as its own build, after a non-crypto build is proven.
+#TW_INCLUDE_CRYPTO := true
+#TW_INCLUDE_CRYPTO_FBE := true
+#TW_INCLUDE_FBE_METADATA_DECRYPT := true
+#BOARD_USES_METADATA_PARTITION := true
