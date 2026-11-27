@@ -1,6 +1,6 @@
 # normal seting
 export OF_USE_GREEN_LED=0
-export FOX_USE_NANO_EDITOR=1
+export FOX_USE_NANO_EDITOR=0
 export OF_ALLOW_DISABLE_NAVBAR=0
 export OF_SKIP_FBE_DECRYPTION=1
 export FOX_DELETE_AROMAFM=1
@@ -14,7 +14,7 @@ export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
 export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
 export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
 export FOX_ASH_IS_BASH=1
-export FOX_USE_XZ_UTILS=1
+export FOX_USE_XZ_UTILS=0
 export OF_ENABLE_LPTOOLS=1
 export OF_PATCH_AVB20=1
 # export FOX_USE_SPECIFIC_MAGISK_ZIP=~/fox_12.1/device/samsung/universal9611/magisk/magisk.zip
@@ -41,3 +41,19 @@ export OF_STATUS_H=100
 #gta4xl
 #export OF_STATUS_H=0
 #export OF_SCREEN_H=2000
+
+# --- ramdisk budget + Exynos dynamic-partition bootloop fix (2026-11-27) ---
+# Measured on device: 14.9 MB ramdisk boots, 17.4 MB loops. The wiki documents
+# FOX_DYNAMIC_SAMSUNG_FIX as a workaround for a Samsung Exynos dynamic-partition
+# bug that causes a BOOTLOOP on encountering certain binaries, and it strips
+# bash/nano/aapt. That is a better explanation than a hard size wall, so it is
+# tested here together with the documented size reductions.
+export FOX_DYNAMIC_SAMSUNG_FIX=1
+export OF_REMOVE_AAPT=1
+export FOX_REMOVE_ZIP_BINARY=1
+export FOX_USE_NANO_EDITOR=0
+export FOX_USE_XZ_UTILS=0
+export OF_USE_LZMA_COMPRESSION=1
+export OF_SKIP_EXTRA_LANGUAGES=1
+# FOX_DRASTIC_SIZE_REDUCTION must come AFTER every other export
+export FOX_DRASTIC_SIZE_REDUCTION=1
