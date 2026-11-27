@@ -2,7 +2,7 @@
 export OF_USE_GREEN_LED=0
 export FOX_USE_NANO_EDITOR=0
 export OF_ALLOW_DISABLE_NAVBAR=0
-export OF_SKIP_FBE_DECRYPTION=1
+export OF_SKIP_FBE_DECRYPTION=0
 export FOX_DELETE_AROMAFM=1
 export FOX_ENABLE_APP_MANAGER=1
 export OF_IGNORE_LOGICAL_MOUNT_ERRORS=1
@@ -48,7 +48,8 @@ export OF_STATUS_H=100
 # bug that causes a BOOTLOOP on encountering certain binaries, and it strips
 # bash/nano/aapt. That is a better explanation than a hard size wall, so it is
 # tested here together with the documented size reductions.
-export FOX_DYNAMIC_SAMSUNG_FIX=1
+# disabled: also strips binaries; test separately once a build reaches the UI
+#export FOX_DYNAMIC_SAMSUNG_FIX=1
 export OF_REMOVE_AAPT=1
 export FOX_REMOVE_ZIP_BINARY=1
 export FOX_USE_NANO_EDITOR=0
@@ -56,4 +57,5 @@ export FOX_USE_XZ_UTILS=0
 export OF_USE_LZMA_COMPRESSION=1
 export OF_SKIP_EXTRA_LANGUAGES=1
 # FOX_DRASTIC_SIZE_REDUCTION must come AFTER every other export
-export FOX_DRASTIC_SIZE_REDUCTION=1
+# disabled: DRASTIC reduction strips init dependencies and is the prime suspect for the hang at starting
+#export FOX_DRASTIC_SIZE_REDUCTION=1
