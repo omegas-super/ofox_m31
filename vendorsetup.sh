@@ -33,7 +33,7 @@ export OF_STATUS_INDENT_LEFT=60
 export OF_STATUS_INDENT_RIGHT=60
 export OF_CLOCK_POS=1
 #a51 and m31
-export OF_SCREEN_H=2400
+export OF_SCREEN_H=2340
 export OF_STATUS_H=100
 #m21
 #export OF_SCREEN_H=2340
@@ -59,3 +59,5 @@ export OF_SKIP_EXTRA_LANGUAGES=1
 # FOX_DRASTIC_SIZE_REDUCTION must come AFTER every other export
 # disabled: DRASTIC reduction strips init dependencies and is the prime suspect for the hang at starting
 #export FOX_DRASTIC_SIZE_REDUCTION=1
+# Format Data must also wipe the FBE keys, otherwise stale keys stay in /metadata
+export OF_WIPE_METADATA_AFTER_DATAFORMAT=1
